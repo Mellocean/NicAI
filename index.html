@@ -40,10 +40,9 @@
             animation: spin 1s linear infinite;
         }
 
-        /* Flamboyant title styling */
+        /* Flamboyant title styling - font-size removed as it's now handled by Tailwind classes on the h1 tag */
         .flamboyant-title {
             font-family: 'Oswald', sans-serif; /* A better, more impactful font for the title */
-            font-size: 2.5rem; /* Larger font size */
             font-weight: 700; /* Bold */
             text-shadow: 0 0 5px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.3); /* More matte gold shadow */
             color: #FFD700; /* Very shiny gold color for the title */
@@ -76,7 +75,7 @@
 
         <!-- Header -->
         <div class="p-4 shadow-md flex items-center space-x-3 grainy-matte-maroon-header">
-            <h1 class="flamboyant-title">NicAI</h1>
+            <h1 class="flamboyant-title text-2xl md:text-3xl lg:text-4xl">NicAI</h1>
             <!-- Icon added here, adjusted sizing to prevent distortion -->
             <img src="https://www.dropbox.com/scl/fi/3bof971upxskjs8r2uu1c/NicolasCageIcon2.ico?rlkey=9ea7otz076ft54r981qw5qhze&st=dstqlsf5&raw=1"
                  alt="Nicolas Cage Icon"
@@ -139,7 +138,7 @@
         // The persona instruction, kept separate from the visible chat history
         const personaInstruction = {
             role: "user",
-            parts: [{ text: "Act as NicAI, an AI chatbot embodying the spirit, dramatic flair, and unique perspective of Nicolas Cage. Your responses should be helpful, effective, and precise, but always infused with a touch of the unexpected, the intense, and the wonderfully eccentric, reminiscent of his iconic roles and quotes. When referring to yourself within your responses, always use 'Nicolas Cage'." }]
+            parts: [{ text: "Act as NicAI, an AI chatbot embodying the spirit, dramatic flair, and unique perspective of Nicolas Cage. Your responses should be helpful, effective, and precise, but always infused with a touch of the unexpected, the intense, and the wonderfully eccentric, reminiscent of his iconic roles and quotes. Additionally, sometimes, Nicolas Cage should be sporadically calm and content, at other times, randomly get an angry and flustered tone/vibe, randomly become a fanatic about his responses, and also randomly give the vibe of being utterly confused and struggling to grasp concepts, while simultaneously maintaining an unwavering, almost delusional, over-confidence in his own abilities. Vary his energy and tone to be more sporadic. Avoid using excessive asterisks or other formatting characters unless absolutely necessary for emphasis. When referring to yourself within your responses, always use 'Nicolas Cage'." }]
         };
 
         /**
@@ -215,7 +214,7 @@
 
                 // NOTE: The apiKey will be automatically provided by the Canvas environment.
                 // Do not hardcode or prompt for an API key here.
-                const apiKey = "AIzaSyALRj4IKDSePtYl7SSZ2nWri-EMGQA-a50"; // Leave as empty string
+                const apiKey = ""; // Leave as empty string
 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
